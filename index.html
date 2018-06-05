@@ -103,6 +103,24 @@
                 </div>
               </div>
               <img class="img-fluid" src="img/portfolio/CSSG.jpg" alt="">
+        
+
+        <div class="container">
+          <div id="slideshow">
+            <img alt="slideshow" class="img-fluid" src="img/portfolio/CSSG.jpg" id="imgClickAndChange" onclick="changeImage()" />
+          </div>
+        </div>
+
+        <script language="javascript">
+          var imgs = ["img/portfolio/Marvel.jpg"];
+
+          function changeImage() {
+          document.getElementById("imgClickAndChange").src = imgs[0];
+          imgs.push(imgs.shift())
+          }
+        </script>
+
+
               <p class="caption">TeachConnect</p>
             </a>
           </div>
