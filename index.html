@@ -228,7 +228,7 @@
               <!-- img slideshow -->
               <div class="container">
                 <div id="slideshow">
-                <img alt="slideshow" class="img-fluid" src="img/portfolio/TeachConnect.png" id="imgClickAndChange" onclick="changeImage()" />
+                <img alt="slideshow" class="img-fluid" src="img/portfolio/TeachConnect.png" id="imgClickAndChange" onclick="changeCSSGImage()" />
                 <p class="caption">(Click image to see more!)</p>
                 </div>
               </div>
@@ -236,7 +236,7 @@
               <script language="javascript">
                 var CSSGimgs = ["img/portfolio/CSSG.jpg", "img/portfolio/TeachConnect.png"];
 
-                function changeImage() {
+                function changeCSSGImage() {
                 document.getElementById("imgClickAndChange").src = CSSGimgs[0];
                 CSSGimgs.push(CSSGimgs.shift())
                 }
@@ -268,14 +268,14 @@
               <!-- img slideshow -->
               <div class="container">
                 <div id="slideshow">
-                <img alt="slideshow" class="img-fluid" src="img/portfolio/Debate Worlds.jpg" id="imgClickAndChange" onclick="changeImage()" />
+                <img alt="slideshow" class="img-fluid" src="img/portfolio/Debate Worlds.jpg" id="imgClickAndChange" onclick="changeDebateImage()" />
                 </div>
               </div>
               <!-- script to change image when click -->
               <script language="javascript">
                 var debateimgs = ["img/portfolio/Debate Worlds.jpg"];
 
-                function changeImage() {
+                function changeDebateImage() {
                 document.getElementById("imgClickAndChange").src = debateimgs[0];
                 debateimgs.push(debateimgs.shift())
                 }
@@ -315,7 +315,7 @@
               <!-- img slideshow -->
               <div class="container">
                 <div id="slideshow">
-                <img alt="slideshow" class="img-fluid" src="img/portfolio/Treelion.png" id="imgClickAndChange" onclick="changeImage()" />
+                <img alt="slideshow" class="img-fluid" src="img/portfolio/Treelion.png" id="imgClickAndChange" onclick="changeJDImage()" />
                 <p class="caption">(Click image to see more!)</p>
                 </div>
               </div>
@@ -323,7 +323,7 @@
               <script language="javascript">
                 var JDimgs = ["img/portfolio/JD.jpg", "img/portfolio/Treelion.png"];
 
-                function changeImage() {
+                function changeJDImage() {
                 document.getElementById("imgClickAndChange").src = JDimgs[0];
                 JDimgs.push(JDimgs.shift())
                 }
