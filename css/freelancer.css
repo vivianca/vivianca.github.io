@@ -12,6 +12,10 @@ h6 {
   font-family: 'Montserrat';
 }
 
+.caption {
+  text-align: center;
+}
+
 hr.star-light,
 hr.star-dark {
   max-width: 15rem;
