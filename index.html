@@ -45,12 +45,6 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Gallery</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="https://howtovivian.wordpress.com/" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/Vivian Yang resume.pdf" target="_blank">Resume</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Connect!</a>
             </li>
           </ul>
@@ -86,6 +80,9 @@
             <p class="lead">Thanks for checking out my story. If anything interests you, please get in touch! Eternally grateful.</p>
           </div>
         </div>
+        <div>
+          <a class="btn btn-primary btn-lg rounded-pill" href="howtovivian.wordpress.com" target="_blank">Blog</a>
+          <a class="btn btn-primary btn-lg rounded-pill" href="Vivian Yang resume.pdf" target="_blank">Resume</a>
       </div>
     </section>
 
@@ -237,11 +234,11 @@
               </div>
               <!-- script to change image when click -->
               <script language="javascript">
-                var imgs = ["img/portfolio/CSSG.jpg", "img/portfolio/TeachConnect.png"];
+                var CSSGimgs = ["img/portfolio/CSSG.jpg", "img/portfolio/TeachConnect.png"];
 
                 function changeImage() {
-                document.getElementById("imgClickAndChange").src = imgs[0];
-                imgs.push(imgs.shift())
+                document.getElementById("imgClickAndChange").src = CSSGimgs[0];
+                CSSGimgs.push(CSSGimgs.shift())
                 }
               </script>
 
@@ -276,11 +273,11 @@
               </div>
               <!-- script to change image when click -->
               <script language="javascript">
-                var imgs = ["img/portfolio/Debate Worlds.jpg"];
+                var debateimgs = ["img/portfolio/Debate Worlds.jpg"];
 
                 function changeImage() {
-                document.getElementById("imgClickAndChange").src = imgs[0];
-                imgs.push(imgs.shift())
+                document.getElementById("imgClickAndChange").src = debateimgs[0];
+                debateimgs.push(debateimgs.shift())
                 }
               </script>
 
@@ -324,13 +321,15 @@
               </div>
               <!-- script to change image when click -->
               <script language="javascript">
-                var imgs = ["img/portfolio/JD.jpg", "img/portfolio/Treelion.png"];
+                var JDimgs = ["img/portfolio/JD.jpg", "img/portfolio/Treelion.png"];
 
                 function changeImage() {
-                document.getElementById("imgClickAndChange").src = imgs[0];
-                imgs.push(imgs.shift())
+                document.getElementById("imgClickAndChange").src = JDimgs[0];
+                JDimgs.push(JDimgs.shift())
                 }
               </script>
+
+              <p>I found out about this machine learning competition through a mailing list, knew little about ML at the time, so talked to some friends who were more knowledgeable than me and we built a team to compete. We wrote up an algorithm for "facial recognition for pigs" which had the 2nd highest accuracy in North America, and were then invited to the finals where we were the youngest contestants, pitched our startup idea based on this algorithm, and won 3rd place.
               <p class="mb-5"><!-- insert text --></p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
