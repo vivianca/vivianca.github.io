@@ -1,361 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Idealist. Innovator. Implementor. Stanford CS '21">
-    <meta name="author" content="Vivian Yang">
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
 
-    <title>Vivian Yang | Stanford</title>
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">
-
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body id="page-top">
+  <body>
+    <!--
+    - #MAIN
+  -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Vivian Yang</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/captainmew.png"
+              alt="captainmew"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Vi Yang">Vi Yang</h1>
+
+            <p class="title">I build things people love</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <!-- <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div> -->
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a
+                  href="mailto:vivianca@alumni.stanford.edu"
+                  class="contact-link inline-link"
+                  >vivianca@alumni.stanford.edu</a
+                >
+              </div>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Gallery</a>
+
+            <li class="contact-item">
+              <!-- <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div> -->
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+12133522795" class="contact-link inline-link"
+                  >+1 650-862-2841</a
+                >
+              </div>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Connect!</a>
+
+            <!-- <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+             <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23">June 23, 1982</time>
+            </div>
+
+          </li> -->
+
+            <li class="contact-item">
+              <!-- <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div> -->
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Palo Alto, California</address>
+              </div>
             </li>
           </ul>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/smile.png" alt="">
-        <h1 class="text-uppercase mb-0">Vivian Yang</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Idealist. Innovator. Implementor. Stanford CS '21</h2>
-      </div>
-    </header>
+          <!-- <div class="separator"></div>
 
-        <!-- About Section -->
-    <section class="bg-primary text-white mb-0" id="about">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-white">About</h2>
-        <hr class="star-light mb-5">
-        <div class="row">
-          <div class="col-md-6">
-            <p class="lead">Hey! I'm Vivian, born in China, grew up in Canada. Spending my childhood nearly always in motion helped me connect with different cultures, different communities, and different people. My experiences gave me a foundation of flexibility and empathy that carries forth to my passions today.</p>
-            <p class="lead">I auditioned into Lord Byng Secondary, a high school with a dedicated arts program. Inspired by all the talent around me, I created a student organization to perform music for elders, refugees, and children across our province. Rallying a team, growing our mission, and passing the club on to a new class of capable executives was an amazing taste of entrepreneurship.</p>
-          </div>
-          <div class="col-md-6">
-            <p class="lead">Coming to Stanford, I hold two major goals: </p>
-            <p class="lead">1) Cultivate technical expertise, and </p>
-            <p class="lead">2) Connect with people who are interesting and interested. </p>
-            <p class="lead">Moving forward, I'm looking for more scalable ways to make impact. For all the people I connected with, all the people I cared about — maybe the way to best give back to them is through technology and entrepreneurship.
-            <p class="lead">Thanks for checking out my story. If anything interests you, please get in touch! Eternally grateful.</p>
-          </div>
-        </div>
-        <div align="center">
-          <a class="btn btn-primary btn-lg rounded-pill" href="https://howtovivian.wordpress.com" target="_blank">Blog</a>
-          <a class="btn btn-primary btn-lg rounded-pill" href="Vivian Yang resume.pdf" target="_blank">Resume</a>
-      </div>
-    </section>
+        <ul class="social-list">
 
-    <!-- Portfolio Grid Section -->
-    <section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Gallery</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/TeachConnect.png" alt="">
-              <p class="caption">TeachConnect</p>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
             </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/Debate Worlds.jpg" alt="">
-              <p class="caption">World Universities Debating Championships</p>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/Treelion.png" alt="">
-              <p class="caption">JD Global Data Challenge</p>
-            </a>
-          </div>
-      </div>
-    </section>
+          </li>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Let's connect!</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Name</label>
-                  <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="What's your name?">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Contact</label>
-                  <input class="form-control" id="email" type="email" placeholder="Contact" required="required" data-validation-required-message="Let me reply to you!">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Message</label>
-                  <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="What are your thoughts?"></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <br>
-              <div id="success"></div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" value="submit">Send</button>
-              </div>
-            </form>
-          </div>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul> -->
         </div>
-      </div>
-    </section>
+      </aside>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <ul class="list-inline text-center">
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/vivianca/" target="_blank">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <!-- <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Fun</button>
+          </li> -->
+
+            <!-- <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li> -->
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">Hello! I'm V.</h2>
+          </header>
+
+          <section class="about-text">
+            <!-- <p>I want to understand the world and help people be happy.<br> -->
+            <p>
+              My superpower is my combination of creativity, user empathy, and
+              technical capability.
+            </p>
+            <p>
+              Canada
+              <img
+                src="./assets/images/right-arrow.png"
+                alt="arrow pointing right"
+                class="inline-icon"
+              />
+              arts academy
+              <img
+                src="./assets/images/right-arrow.png"
+                alt="arrow pointing right"
+                class="inline-icon"
+              />
+              Stanford CS
+              <img
+                src="./assets/images/right-arrow.png"
+                alt="arrow pointing right"
+                class="inline-icon"
+              />
+              Bridgewater
+              <img
+                src="./assets/images/right-arrow.png"
+                alt="arrow pointing right"
+                class="inline-icon"
+              />
+              <img
+                src="./assets/images/question.png"
+                alt="telephone with a
+              question mark"
+                class="inline-icon"
+                style="margin-left: 0px"
+              />
+              <a class="inline-link" href="mailto:vivianca@alumni.stanford.edu"
+                >let's chat!</a
+              >
+            </p>
+            <!-- <p>I grew up in an arts academy,<br>
+            studied Computer Science and Human-Computer Interaction,<br>
+            worked as an investment researcher,<br>
+            and now am back in the game to make awesome products people love. -->
+            <!-- </p> -->
+          </section>
+
+          <!--
+          - service
+        -->
+
+          <section class="service">
+            <!-- <h3 class="h3 service-title">What i'm doing</h3> -->
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/animations/Love.gif
+                "
+                    alt="Animated icon of Mushroom.gg"
+                    width="50"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Product & Strategy @ Mushroom
+                  </h4>
+
+                  <p class="service-item-text">
+                    Fast-moving Series A startup, building social AI for young
+                    gamers.
+                  </p>
+
+                  <p class="service-item-text">
+                    Created and drove adoption for a
+                    <a
+                      class="inline-link"
+                      href="./assets/files/Defining consumer social.html"
+                      >framework on user growth in social products</a
+                    >.
+                  </p>
+
+                  <p class="service-item-text">
+                    Led a cross-functional team to improve new user experience.
+                    76% of users now choose the revamp as their favourite part
+                    of the app.
+                  </p>
+                </div>
               </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/vivianca" target="_blank">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/mewo.png"
+                    alt="Mewo icon"
+                    width="50"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Everything @ Mewo</h4>
+
+                  <p class="service-item-text">
+                    Make your crush fall in love with you by raising an AI pet
+                    together!<br />Come play by clicking Invite at
+                    <a
+                      href="https://top.gg/bot/1038314993768218624"
+                      class="inline-link"
+                      >Top.gg</a
+                    >.
+                  </p>
+
+                  <p class="service-item-text">
+                    Currently designing and developing the game into an iOS app
+                    using Swift.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/BW.png"
+                    alt="Bridgewater icon"
+                    width="50"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Investment Associate @ Bridgewater Associates
+                  </h4>
+
+                  <p class="service-item-text">
+                    Did market research (data analysis and writing reports for
+                    clients) on monetary policy, fixed income strategy, and
+                    China.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-no-round-box">
+                  <img
+                    src="./assets/images/stanford.png"
+                    alt="Stanford icon"
+                    width="50"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Computer Science @ Stanford University
+                  </h4>
+
+                  <p class="service-item-text">
+                    <b>Concentration in Human-Computer Interaction:</b> UI/UX
+                    design, user research, design thinking.
+                  </p>
+
+                  <p class="service-item-text">
+                    <a
+                      class="inline-link"
+                      href="https://arxiv.org/abs/2010.07292"
+                      >Thesis: ACM CSCW Conference Honorable Mention paper</a
+                    >
+                    using AI to predict team success.
+                  </p>
+
+                  <p class="service-item-text">
+                    <b>Debate Team:</b> Highest ranked novice at World
+                    Championships.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-no-round-box">
+                  <img
+                    src="./assets/images/ycombinator.png"
+                    alt="YCombinator icon"
+                    width="50"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Mannager for YCombinator Hackathon,
+                    <a
+                      class="inline-link"
+                      href="https://www.ycombinator.com/blog/april-2019-hackathon-recap/"
+                      >Winner</a
+                    >
+                  </h4>
+
+                  <p class="service-item-text">
+                    Our team of 4 built computer vision for retail analytics. I
+                    built the frontend and pitch deck, and pitched to YC judges
+                    + 250 attendees.
+                  </p>
+
+                  <img
+                    class="box-image"
+                    src="./assets/images/ycpresentation.jpg"
+                    alt="Picture of me presenting our project at the YC hackathon"
+                  />
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-no-round-box">
+                  <img
+                    src="./assets/images/trophy.png"
+                    alt="Trophy icon"
+                    width="50"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">
+                    Winner, JD Global Data Challenge & Wanxiang Blockchain
+                    Hackathon
+                  </h4>
+
+                  <p class="service-item-text">
+                    I built AI for agricultural analytics with a team of 3
+                    friends, and a sharing economy app with another team of 5
+                    friends. We won prizes of $15,000 and $5,000 in these two
+                    competitions.
+                  </p>
+                </div>
               </li>
             </ul>
+          </section>
+        </article>
+
+        <!--
+        - #RESUME
+      -->
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Here's corporate V.</h2>
+          </header>
+
+          <div class="iframe-container">
+            <iframe src="./assets/files/Vi_Yang_resume.pdf"></iframe>
           </div>
-        </div>
-      </div>
-    </footer>
+        </article>
 
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>Copyright &copy; Vivian Yang 2018</small>
-      </div>
-    </div>
+        <!--
+        - #CONTACT
+      -->
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
-    </div>
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Let's chat!</h2>
+          </header>
 
-    <!-- Portfolio Modals -->
+          <section class="contact-form">
+            <form action="#" class="form" data-form>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="fullname"
+                  class="form-input"
+                  placeholder="Name"
+                  required
+                  data-form-input
+                />
 
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">CS + Social Good Studio</h2>
-              <hr class="star-dark mb-5">
-              
-              <!-- img slideshow -->
-              <div class="container">
-                <div id="slideshow">
-                <img alt="slideshow" class="img-fluid" src="img/portfolio/TeachConnect.png" id="imgClickAndChange" onclick="changeCSSGImage()" />
-                <p class="caption">(Click image to see more!)</p>
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email"
+                  required
+                  data-form-input
+                />
               </div>
-              <!-- script to change image when click -->
-              <script language="javascript">
-                var CSSGimgs = ["img/portfolio/CSSG.jpg", "img/portfolio/TeachConnect.png"];
 
-                function changeCSSGImage() {
-                document.getElementById("imgClickAndChange").src = CSSGimgs[0];
-                CSSGimgs.push(CSSGimgs.shift())
-                }
-              </script>
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Your Message"
+                required
+                data-form-input
+              ></textarea>
 
-              <p>TeachConnect team: a platform to fix the lack of peer feedback in the teaching profession, by connecting teachers to review each other's lessons and act as mentors to each other.</p>
-              <p>Had a blast working with this team over 2 quarters to learn the entire design thinking process! We took a human-centered design approach, starting our project with figuring out our users' pain points. We then prototyped 3 different solutions and did user testing to decide on the best one to implement. We're coding TeachConnect up now with React and Firebase, and I'm excited to see where we go from here!</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+        </article>
       </div>
-    </div>
+    </main>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">World Universities Debating Championships</h2>
-              <hr class="star-dark mb-5">
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
 
-              <!-- img slideshow -->
-              <div class="container">
-                <div id="slideshow">
-                <img alt="slideshow" class="img-fluid" src="img/portfolio/Debate Worlds.jpg" id="imgClickAndChange" onclick="changeDebateImage()" />
-                </div>
-              </div>
-              <!-- script to change image when click -->
-              <script language="javascript">
-                var debateimgs = ["img/portfolio/Debate Worlds.jpg"];
-
-                function changeDebateImage() {
-                document.getElementById("imgClickAndChange").src = debateimgs[0];
-                debateimgs.push(debateimgs.shift())
-                }
-              </script>
-              <p></p>
-              <p>Had the unforgettable opportunity to travel to Mexico City with Stanford Debate for the world's largest university debate tournament. It was an irreplaceable experience as a novice. We debated motions such as:</p>
-
-                <p>This House World ban all communication tech companies from encrypting their users' ata, including the content of their communications, in such a way that the company cannot retrieve that data even under a court order, and</p>
-
-               <p>This house would not allow out of court settlements for workplace discrimination and harrassment.</p>
-
-
-
-
-
-              <p class="mb-5"><!-- insert text --></p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">JD Finance Global Data Challenge</h2>
-              <hr class="star-dark mb-5">
-              <!-- img slideshow -->
-              <div class="container">
-                <div id="slideshow">
-                <img alt="slideshow" class="img-fluid" src="img/portfolio/Treelion.png" id="imgClickAndChange" onclick="changeJDImage()" />
-                <p class="caption">(Click image to see more!)</p>
-                </div>
-              </div>
-              <!-- script to change image when click -->
-              <script language="javascript">
-                var JDimgs = ["img/portfolio/JD.jpg", "img/portfolio/Treelion.png"];
-
-                function changeJDImage() {
-                document.getElementById("imgClickAndChange").src = JDimgs[0];
-                JDimgs.push(JDimgs.shift())
-                }
-              </script>
-
-              <p>I found out about this machine learning competition through a mailing list, knew little about ML at the time, so talked to some friends who were more knowledgeable than me and we built a team to compete. We wrote up an algorithm for "facial recognition for pigs" which had the 2nd highest accuracy in North America, and were then invited to the finals where we were the youngest contestants, pitched our startup idea based on this algorithm, and won 3rd place.
-              <p class="mb-5"><!-- insert text --></p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
-
 </html>

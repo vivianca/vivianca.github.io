@@ -1,0 +1,1481 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Defining consumer social</title>
+    <style>
+      /* cspell:disable-file */
+      /* webkit printing magic: print all background colors */
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 20;
+        width: 600px;
+      }
+      @media only screen {
+        body {
+          margin: 2em auto;
+          max-width: 900px;
+          color: rgb(55, 53, 47);
+        }
+      }
+
+      body {
+        line-height: 1.5;
+        /* white-space: pre-wrap; */
+      }
+
+      a,
+      a.visited {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+      }
+
+      .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+      }
+
+      .callout {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+      }
+
+      figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        background-color: transparent;
+      }
+
+      .indented {
+        padding-left: 1.5em;
+      }
+
+      hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      @media only print {
+        img {
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      }
+
+      @page {
+        margin: 1in;
+      }
+
+      .collection-content {
+        font-size: 0.875rem;
+      }
+
+      .column-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .column {
+        padding: 0 1em;
+      }
+
+      .column:first-child {
+        padding-left: 0;
+      }
+
+      .column:last-child {
+        padding-right: 0;
+      }
+
+      .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+      }
+
+      .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+      }
+
+      .table_of_contents-indent-2 {
+        margin-left: 3rem;
+      }
+
+      .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+      }
+
+      .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+      }
+
+      table {
+        border-left: none;
+        border-right: none;
+      }
+
+      th,
+      td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+      }
+
+      th {
+        color: rgba(55, 53, 47, 0.6);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+
+      li > ol:first-child,
+      li > ul:first-child {
+        margin-block-start: 0.6em;
+      }
+
+      ul > li {
+        list-style: disc;
+      }
+
+      ul.to-do-list {
+        padding-inline-start: 0;
+      }
+
+      ul.to-do-list > li {
+        list-style: none;
+      }
+
+      .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+      }
+
+      ul.toggle > li {
+        list-style: none;
+      }
+
+      ul {
+        padding-inline-start: 1.7em;
+      }
+
+      ul > li {
+        padding-left: 0.1em;
+      }
+
+      ol {
+        padding-inline-start: 1.6em;
+      }
+
+      ol > li {
+        padding-left: 0.2em;
+      }
+
+      .mono ol {
+        padding-inline-start: 2em;
+      }
+
+      .mono ol > li {
+        text-indent: -0.4em;
+      }
+
+      .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+      }
+
+      /* Indent toggle children */
+      .toggle > li > details {
+        padding-left: 1.7em;
+      }
+
+      .toggle > li > details > summary {
+        margin-left: -1.1em;
+      }
+
+      .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+      }
+
+      .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      .page-description {
+        margin-bottom: 2em;
+      }
+
+      .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+      }
+      .simple-table td {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table th {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+      }
+      .simple-table-header {
+        font-weight: 500;
+      }
+
+      time {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+      }
+
+      img.icon {
+        border-radius: 3px;
+      }
+
+      .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+
+      .user-icon-inner {
+        font-size: 0.8em;
+      }
+
+      .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+      }
+
+      .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+      }
+
+      .page-header-icon img {
+        border-radius: 3px;
+      }
+
+      .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+      }
+
+      p > .user {
+        opacity: 0.5;
+      }
+
+      td > .user,
+      td > time {
+        white-space: nowrap;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+      }
+
+      p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .code,
+      code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+      }
+
+      code {
+        color: #eb5757;
+      }
+
+      .code {
+        padding: 1.5em 1em;
+      }
+
+      .code-wrap {
+        /* white-space: pre-wrap; */
+        word-break: break-all;
+      }
+
+      .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+      }
+
+      blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+      }
+
+      .bookmark-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+      }
+
+      .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+      }
+
+      .sans {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .code {
+        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace;
+      }
+      .serif {
+        font-family: Lyon-Text, Georgia, ui-serif, serif;
+      }
+      .mono {
+        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+      }
+      .pdf .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK JP";
+      }
+      .pdf:lang(zh-CN) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK SC";
+      }
+      .pdf:lang(zh-TW) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK TC";
+      }
+      .pdf:lang(ko-KR) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK KR";
+      }
+      .pdf .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .pdf .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK JP";
+      }
+      .pdf:lang(zh-CN) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK SC";
+      }
+      .pdf:lang(zh-TW) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK TC";
+      }
+      .pdf:lang(ko-KR) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK KR";
+      }
+      .pdf .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .highlight-default {
+        color: rgba(55, 53, 47, 1);
+      }
+      .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .block-color-default {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .select-value-color-interactiveBlue {
+        background-color: rgba(35, 131, 226, 0.07);
+      }
+      .select-value-color-pink {
+        background-color: rgba(245, 224, 233, 1);
+      }
+      .select-value-color-purple {
+        background-color: rgba(232, 222, 238, 1);
+      }
+      .select-value-color-green {
+        background-color: rgba(219, 237, 219, 1);
+      }
+      .select-value-color-gray {
+        background-color: rgba(227, 226, 224, 1);
+      }
+      .select-value-color-translucentGray {
+        background-color: rgba(255, 255, 255, 0.0375);
+      }
+      .select-value-color-orange {
+        background-color: rgba(250, 222, 201, 1);
+      }
+      .select-value-color-brown {
+        background-color: rgba(238, 224, 218, 1);
+      }
+      .select-value-color-red {
+        background-color: rgba(255, 226, 221, 1);
+      }
+      .select-value-color-yellow {
+        background-color: rgba(253, 236, 200, 1);
+      }
+      .select-value-color-blue {
+        background-color: rgba(211, 229, 239, 1);
+      }
+      .select-value-color-pageGlass {
+        background-color: undefined;
+      }
+      .select-value-color-washGlass {
+        background-color: undefined;
+      }
+
+      .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+      }
+
+      .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+
+      .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+    </style>
+  </head>
+  <body>
+    <article id="800ed9f7-35cb-47a6-b14d-00ecce323dbf" class="page sans">
+      <header>
+        <h1 class="page-title">
+          <span class="icon">💌</span>Defining consumer social
+        </h1>
+        <p class="page-description"></p>
+      </header>
+      <div class="page-body">
+        <h1 id="631670f2-479e-4461-906e-9ab51af0c5da" class="">
+          A framework for social products
+        </h1>
+        <p id="ad2c3b22-ba90-44a1-b014-04f97475c7d8" class="">
+          Making decisions on individual bets is hard without a framework. I
+          propose that social products can be defined using 4 key attributes:
+        </p>
+        <p id="68c27f53-5295-447c-83bd-9386cf0d14f9" class="">
+          Connections, Creators, Community, and Core Action.
+        </p>
+        <p id="3f817379-8125-4c63-ae3b-3c8ac4227a78" class="">
+          We can think of this as a 4x4 chart:
+        </p>
+        <table id="6b9af001-b3da-4a21-bae9-efebc867526a" class="simple-table">
+          <tbody>
+            <tr id="67dfbc26-6e41-4680-bc0b-3a0cf4af1770">
+              <td id="CoI{" class=""><strong>Connections</strong></td>
+              <td id="fYEl" class=""><strong>Creators</strong></td>
+              <td id="]WoL" class=""><strong>Community</strong></td>
+              <td id=":^Xq" class=""><strong>Core Action</strong></td>
+            </tr>
+            <tr id="787e1505-14f8-4e74-a815-4810c26e4c47">
+              <td id="CoI{" class="">Local</td>
+              <td id="fYEl" class="">Long-tail</td>
+              <td id="]WoL" class="">Explicit</td>
+              <td id=":^Xq" class="">Creation</td>
+            </tr>
+            <tr id="adf5dbe6-4d2d-4203-a919-4e69e240f843">
+              <td id="CoI{" class="">Global</td>
+              <td id="fYEl" class="">Short-tail</td>
+              <td id="]WoL" class="">Implicit</td>
+              <td id=":^Xq" class="">Consumption</td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="9dd7276f-c417-426a-8f11-8f5a282e87c1" class="">
+          <strong>Connections</strong> - by and large, who do users engage with?
+        </p>
+        <ul id="c94cd886-6044-4a53-a1a3-00e6b2997e61" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Local: you interact with your friends on
+            <strong>BeReal, Lapse, and Gas</strong>
+          </li>
+        </ul>
+        <ul id="a28621aa-daf0-4d0e-a8ce-3d70e97128ee" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Global: you interact with strangers on
+            <strong>Twitch, TikTok, and Twitter</strong>
+          </li>
+        </ul>
+        <p id="db7d8f1d-ab70-417c-9f20-d3c4daa06ba7" class="">
+          <strong>Creators</strong> - by and large, who drives content creation?
+        </p>
+        <ul id="3383b5ee-73a8-409e-9a9e-725a8f4429a6" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Long-tail: the average user drives content creation on
+            <strong>BeReal, Lapse, and Gas</strong>
+          </li>
+        </ul>
+        <ul id="c6479c7d-15ab-44fd-988f-4580c78345d1" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Short-tail: professional creators drive content creation on
+            <strong>Twitch, TikTok, and Twitter</strong>
+          </li>
+        </ul>
+        <p id="47164a0a-3017-448f-83db-22038f100aba" class="">
+          <strong>Community</strong> - by and large, do users explicitly
+          subdivide by interests?
+        </p>
+        <ul id="cdc98400-5ad5-4904-ae54-44ad25cf7fa8" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Explicit: you explicitly join friend groups on
+            <strong>BeReal, Lapse, and Gas</strong>
+          </li>
+        </ul>
+        <ul id="b780f366-dc8d-45b9-81ab-c20f0a890cb3" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Implicit: <strong>TikTok, Twitch, and Twitter</strong> algorithms
+            infer user interests
+          </li>
+        </ul>
+        <p id="64c01563-f410-4d15-a543-7527e9d44eee" class="">
+          <strong>Core Action</strong> - by and large, what’s the main thing
+          that most users do?
+        </p>
+        <ul id="96272514-324d-4c9a-8a87-8f22b699e487" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Creation: For <strong>BeReal, Lapse, and Gas</strong>, the core
+            action is that everyone creates content
+          </li>
+        </ul>
+        <ul id="5eeb50b5-6d40-44b7-9b2a-5fe53e8a6582" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Consumption: On <strong>TikTok, Twitch, and Twitter</strong>, most
+            people just consume content
+          </li>
+        </ul>
+        <figure
+          class="block-color-gray_background callout"
+          style="display: flex"
+          id="31116f1a-b89a-41ee-90cd-0114fa08c672"
+        >
+          <div style="font-size: 1.5em"><span class="icon">💡</span></div>
+          <div style="width: 100%">
+            <strong
+              >Interestingly, you start to see 2 groups of social
+              networks!</strong
+            >
+          </div>
+        </figure>
+        <h3 id="567524dd-93ea-425e-9b28-1553446889fd" class="">
+          Why should I care?
+        </h3>
+        <ul id="5c72a588-7a52-4cf6-8fa7-6cfade30ec34" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Nascent social networks like us need to choose 1 attribute within
+            each category.
+            <ul id="05503e34-1b5f-4947-a089-5cef983fd9c7" class="bulleted-list">
+              <li style="list-style-type: circle">
+                Mature social networks can successfully blur the lines
+                (e.g. current FB is both local and global, current IG serves
+                both long-tail (your friends’ stories) and short-tail (IG
+                influencers) creators); we cannot.
+              </li>
+            </ul>
+            <ul id="564afb28-73df-437f-9a9d-7a7a47706f0d" class="bulleted-list">
+              <li style="list-style-type: circle">
+                As a new social product, it will be impossible to find
+                product-market fit while trying to create multiple product
+                offerings for multiple markets at once. Conflicting forces will
+                create confusing UX and unclear product identity.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="114a5d78-3507-4acf-8b65-ef63f27abf93" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Different combinations of attributes will give a network its early
+            identity.
+          </li>
+        </ul>
+        <ul id="3a616b14-901f-4bc6-8d7a-f020f1a1a535" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Some combinations of attributes make sense; some make no sense.
+            <ul id="9c85d57f-eeb3-4f43-bb80-e874c32231de" class="bulleted-list">
+              <li style="list-style-type: circle">
+                If the goal is for every user to create content, the network
+                must be local — John Doe’s random selfie has no value to a
+                stranger, but it can be interesting for his friends.
+              </li>
+            </ul>
+            <ul id="fcb62bcc-4579-468a-9ae1-40f51dc0e561" class="bulleted-list">
+              <li style="list-style-type: circle">
+                If the goal is for users to interact with strangers, then, given
+                enough scale, professional creators / power users will emerge
+                and drown out the average, low quality creator.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="6816effc-d101-4002-b9e1-6dc28a3b00ad" class="bulleted-list">
+          <li style="list-style-type: disc">
+            By mapping where Mush fits in the framework, we can make good
+            decisions.
+          </li>
+        </ul>
+        <h2 id="fe7878ec-04b1-401e-848f-71e28e1ddb92" class="">
+          Which combination of attributes make sense?
+        </h2>
+        <ul id="0f784a49-b9ed-4f41-8063-78cc80dbeb24" class="toggle">
+          <li>
+            <details>
+              <summary>
+                <strong><u>Local long-tail network</u></strong> ✅
+              </summary>
+              <p id="71cda748-f482-4034-9349-d1fdf3c7d9b9" class="">
+                Take Discord as an example. (early FB &amp; Snapchat also
+                loosely fit here)
+              </p>
+              <ol
+                type="1"
+                id="d941aa86-b1a3-46fd-a155-1aa1132dd99f"
+                class="numbered-list"
+                start="1"
+              >
+                <li>
+                  Connections: Users interact locally (1st degree connections:
+                  friends, people you game with)
+                </li>
+              </ol>
+              <ol
+                type="1"
+                id="95d6f20f-8850-40a4-a162-a58f2375e44c"
+                class="numbered-list"
+                start="2"
+              >
+                <li>
+                  Creators: Because these are local users within a private,
+                  explicit community, creators are necessarily long-tail.
+                  Everyone chats together.
+                </li>
+              </ol>
+              <ol
+                type="1"
+                id="09efff12-a421-48d9-8ea2-bc04d40cabdc"
+                class="numbered-list"
+                start="3"
+              >
+                <li>Community: Communities can be explicit (discord server)</li>
+              </ol>
+              <ol
+                type="1"
+                id="f6a02ebb-2d5d-41f7-ae83-12bba190216c"
+                class="numbered-list"
+                start="4"
+              >
+                <li>Core Loop - Long-tail creators both create and consume.</li>
+              </ol>
+              <figure id="ed5f656a-730b-4fd7-9b02-69244d7ad1b0" class="image">
+                <a href="Defining%20consumer%20social/Untitled.png"
+                  ><img
+                    style="width: 982px"
+                    src="Defining%20consumer%20social/Untitled.png"
+                /></a>
+              </figure>
+              <p id="c9952f66-5746-45ed-8e0a-19e1e6bcaa99" class="">
+                Local network takeaways:
+              </p>
+              <ul
+                id="c2050c64-e24f-42f4-b79e-958e593f142d"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  Locally-connected networks tend to be driven by long-tail
+                  creators.
+                </li>
+              </ul>
+              <ul
+                id="2178b234-53bd-4d47-96b9-7b55655bd920"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  Long-tail creators both create and consume content
+                </li>
+              </ul>
+              <ul
+                id="2d42124d-bba7-4bf6-bda5-6bd317fe7a8b"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  Networks that start out Local, get Global as they grow
+                  (dominant creators emerge, public figures join, etc) eg. FB,
+                  Snapchat, IG
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <ul id="37fa9e54-15cc-42b1-9f92-d97ff8dc6211" class="toggle">
+          <li>
+            <details>
+              <summary>
+                <strong><u>Global short-tail network</u></strong> ✅
+              </summary>
+              <p id="ddfda63a-0856-4c25-b112-02c947aebdcb" class="">
+                Tiktok/Youtube are examples of globally-connected networks.
+              </p>
+              <ol
+                type="1"
+                id="0d1e2f93-35f2-4464-919e-c40498227eed"
+                class="numbered-list"
+                start="1"
+              >
+                <li>
+                  Connections: Users interact globally through a powerful For
+                  You feed/Suggested Videos
+                </li>
+              </ol>
+              <ol
+                type="1"
+                id="21c34c6e-2292-4c47-b1a7-3cb0c3953918"
+                class="numbered-list"
+                start="2"
+              >
+                <li>
+                  Creators: Due to the nature of a global network, short-tail
+                  creators drive content.
+                </li>
+              </ol>
+              <ol
+                type="1"
+                id="b2f4b83c-b3f9-4fdb-be3e-c9e66f79eac8"
+                class="numbered-list"
+                start="3"
+              >
+                <li>
+                  Community: Community is implied through content clusters &amp;
+                  algorithmic content distribution, not through explicit
+                  membership in a community.
+                </li>
+              </ol>
+              <ol
+                type="1"
+                id="7beaacec-71cb-4db3-b566-038bca69a978"
+                class="numbered-list"
+                start="4"
+              >
+                <li>
+                  Core Loop: Because Short-tail creators drive content, the
+                  median user just consumes and is not creating content.
+                </li>
+              </ol>
+              <figure id="32bf2a18-0b7d-4335-9762-9267ed1a21b7" class="image">
+                <a href="Defining%20consumer%20social/Untitled_1.png"
+                  ><img
+                    style="width: 987px"
+                    src="Defining%20consumer%20social/Untitled_1.png"
+                /></a>
+              </figure>
+              <p id="3e9ff2d2-c8d6-457a-bb8d-770042e35cf1" class="">
+                Global network takeaways:
+              </p>
+              <ul
+                id="01bb7180-c59e-47f2-894c-339c9c33d6c6"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  Globally-connected networks tend to be driven by short-tail
+                  creators (less local pull for long-tail content).
+                </li>
+              </ul>
+              <ul
+                id="0b37e1e8-d98d-48f9-bf45-af5694038303"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  Globally-connected networks tend to have implicit communities
+                  due to the lack of strong local forces that bind explicit
+                  communities &amp; their tendency to have interest
+                  clustering/algo-driven content distribution
+                </li>
+              </ul>
+              <ul
+                id="c11f774d-6c4d-4b59-b30c-6dc9f27db6c4"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  On globally-connected networks, the median user tends to
+                  consume and not create.
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <ul id="0683c2bd-f463-43ab-889b-206d6254efbd" class="toggle">
+          <li>
+            <details>
+              <summary>
+                <strong><u>Global long-tail network</u></strong> ⚠️
+              </summary>
+              <p id="55f3a261-f054-4d8e-b25a-2f9bf266ec1f" class="">
+                Global + Long-tail networks are rare. These tend to be
+                content-heavy sites and less-so conventional social networks.
+                Think reddit or 9gag, where everyone posts content (and
+                long-tail comments themselves are content) and the engagement
+                radius is global.
+              </p>
+              <ul
+                id="08a72396-8c55-4362-a0a8-84f17633de2f"
+                class="bulleted-list"
+              >
+                <li style="list-style-type: disc">
+                  A quick note on Reddit as an exception on Community:
+                  <ul
+                    id="348f96bc-4c45-4107-9881-a87b7a4b2990"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: circle">
+                      On the surface, community is explicit (subreddit
+                      membership), but default subreddit membership is in large
+                      subreddits where “community” is a vague container for
+                      millions of users. The spirit of community for the average
+                      member may feel more implicit in practice (they don’t
+                      necessarily identity as a “redditor”)
+                      <figure
+                        id="165faa3a-564a-4be0-b218-891d6fb5c26f"
+                        class="image"
+                      >
+                        <a href="Defining%20consumer%20social/Untitled_3.png"
+                          ><img
+                            style="width: 2290px"
+                            src="Defining%20consumer%20social/Untitled_3.png"
+                        /></a>
+                      </figure>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p id="daa18aa0-7c36-4c9e-82ca-c49f1692dd0d" class=""></p>
+            </details>
+          </li>
+        </ul>
+        <ul id="3185bec5-96f2-4a4e-aa77-e06e7dbfa54d" class="toggle">
+          <li>
+            <details>
+              <summary>
+                <strong><u>Local short-tail network</u></strong> ❌
+              </summary>
+              <p id="a9351c11-104e-47b6-833c-be5c8da35689" class="">
+                This pairing doesn’t work, or at least I can’t think of any
+                social network that has that dynamic. Short-tail creators don’t
+                really have a chance to emerge within a local network, and local
+                networks don’t have the scale or monetization needed to attract
+                existing big-name creators. Sure, you can have power users
+                within a local network, but in the grand scheme of a social
+                network I would still categorize those users as long-tail users.
+              </p>
+            </details>
+          </li>
+        </ul>
+        <details>
+          <summary
+            style="
+              font-weight: 600;
+              font-size: 1.875em;
+              line-height: 1.3;
+              margin: 0;
+            "
+          >
+            <u
+              >Where does Mushroom stand? (click to open Mush-specific
+              content)</u
+            >
+          </summary>
+          <div class="indented">
+            <h3 id="e4a625ac-1fe7-489e-8df6-120634dc9c5c" class="">
+              Currently, we are trying to be a global long-tail network. This is
+              concerning ⚠️
+            </h3>
+            <figure id="d655f3d2-60d0-4157-ad66-5af6c4570d80" class="image">
+              <a href="Defining%20consumer%20social/Untitled_2.png"
+                ><img
+                  style="width: 2271px"
+                  src="Defining%20consumer%20social/Untitled_2.png"
+              /></a>
+            </figure>
+            <ol
+              type="1"
+              id="a6250b95-6cca-45f1-961e-907c911f584a"
+              class="numbered-list"
+              start="1"
+            >
+              <li>
+                <strong>Connections: global.</strong> Users primarily interact
+                globally through a For You feed &amp; common challenge hub. We
+                do have messaging around “find your squad” during onboarding,
+                but we haven’t implemented a growth strategy around friends, nor
+                do we reinforce that messaging throughout the app.
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="f064705f-f932-4ebc-abc8-1470aa21cd35"
+              class="numbered-list"
+              start="2"
+            >
+              <li>
+                <strong>Creators: both?</strong> Content is mostly created by
+                the average user, though we do pay short-tail creators to post
+                on Mushroom. I think it’s hard to truly attract short-tail
+                creators when we don’t have differentiating creator features and
+                don’t have scale.
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="2e6b0735-bcc8-425e-b45e-87d6e25ebeb4"
+              class="numbered-list"
+              start="3"
+            >
+              <li>
+                <strong>Community: implicit.</strong> You can follow anyone and
+                we don’t draw hard lines on groups.
+                <ul
+                  id="fd0a83e5-bc83-4403-b01f-1a5a45a8f55f"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: disc">
+                    Guilds would be an example of an explicit community feature
+                    we had but deprecated
+                  </li>
+                </ul>
+                <ul
+                  id="50435b18-41ed-47d7-a6d8-30dd50a47618"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: disc">
+                    We do have game pageshich are more of an informational
+                    subpage like subreddits, not a community
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="5a488891-75b7-435f-ba1e-7fc14000ee0b"
+              class="numbered-list"
+              start="4"
+            >
+              <li>
+                <strong>Core Action: both?</strong> We want users both creating
+                (posts/challenges) and consuming (feed).
+              </li>
+            </ol>
+            <p id="deaca367-7022-4dac-a679-ee5f11b726f3" class=""></p>
+            <p id="c45d55fb-1f1c-4f1f-85c8-6bcd6b8ba54d" class="">
+              Imagine if BeReal showed you candids from strangers all over the
+              world. You’d have no reason to care. Vice versa, imagine if TikTok
+              only showed you posts from your friends. You’d be pretty ticked
+              off because you know TikTok has so much more global content to
+              offer. This contradiction in attributes may be what we have right
+              now.
+            </p>
+            <p id="54cf9bef-a33f-48c9-9803-59501585f01e" class="">
+              <strong
+                >We arrived at our current set of attributes through a grab-bag
+                of features, and this is the critical time for us to come to a
+                strategic consensus.</strong
+              >
+              Do we want users to make friends on our platform and create
+              long-tail content for each other? Or do we want users to passively
+              consume short-tail content from strangers across the world? As
+              soon as we align on who we’re serving and what problem we want to
+              solve for them, figuring out whether each tactical bet is a good
+              idea becomes a much easier task.
+            </p>
+            <p id="f1480930-771f-45c5-ae1a-b43f32e05f39" class=""></p>
+            <p id="cf15b502-bcdb-40b5-b840-a6004eddfcfb" class="">
+              We are connecting users globally while also focusing on long-tail
+              creators, but most social networks connect locally early on if
+              they’re focusing long-tail creators. Local connections is a great
+              way to start a nascent social network.
+            </p>
+            <ul id="a48153b3-9867-4b6c-8feb-dc4fe780c930" class="bulleted-list">
+              <li style="list-style-type: disc">
+                Incumbents like IG, FB, Snapchat, Discord focused on local
+                connections before pivoting to global after reaching scale.
+              </li>
+            </ul>
+            <ul id="ddba15ae-b3d4-40f3-85b9-dd8fb46b848e" class="bulleted-list">
+              <li style="list-style-type: disc">
+                New trending social apps are also focusing on local: Gas,
+                BeReal, Journal, Geojam, Sush, etc.
+              </li>
+            </ul>
+            <ul id="97758cad-cafe-490b-a911-b95ec63415d8" class="bulleted-list">
+              <li style="list-style-type: disc">
+                One of our arguments against going local is that local networks
+                can never support ad monetization at scale. This may be true,
+                but many incumbents show us that it’s possible to pivot from
+                local to global once you have users.
+              </li>
+            </ul>
+            <h3 id="3ff78c42-8255-418b-affd-c00a90cf1511" class="">
+              Finally, some actionable questions for us
+            </h3>
+            <ul id="c27cc499-b58c-43e4-bd4a-4a081332e8ef" class="bulleted-list">
+              <li style="list-style-type: disc">
+                <strong
+                  >Can we revisit features that promote local connection and
+                  long-tail creators?</strong
+                >
+                <ul
+                  id="316d6da3-c1ae-4981-8c6b-863bcd34541f"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Guilds for people who play similar games?
+                  </li>
+                </ul>
+                <ul
+                  id="3cf67309-e25b-48a3-9d98-79c531de3935"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Find your gaming squad and auto-ping them every time you
+                    start playing?
+                  </li>
+                </ul>
+                <ul
+                  id="509c96b3-9e18-4c01-b8cc-5a450c3075d8"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Generate content from gaming session rich data and auto-tag
+                    your friends?
+                  </li>
+                </ul>
+                <ul
+                  id="d2aa9722-d4fb-4d57-a765-5e7d19bcc623"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Find gaming friends nearby?
+                  </li>
+                </ul>
+                <ul
+                  id="ae478d74-2d59-44db-88c3-29649d78005b"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Best friend oriented features?
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul id="72fb04f9-e308-487a-80f4-cc6f3fab7783" class="bulleted-list">
+              <li style="list-style-type: disc">
+                <strong>Or, do we think the psychology of gamers </strong
+                ><em><strong>uniquely</strong></em
+                ><strong>
+                  enable a global + long-tail approach, unlike other
+                  platforms?</strong
+                >
+                <ul
+                  id="8b6ab93a-f6df-4f46-9331-e62c07f8b48c"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Maybe game clip content is interesting to a global audience
+                    whereas FB family photos are purely local?
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul id="2240e428-32f3-44bb-8a54-15cb6f6fad6b" class="bulleted-list">
+              <li style="list-style-type: disc">
+                <strong
+                  >If we are sure we want to also attract short-tail creators,
+                  how do we incentivize them aside from pure cash?</strong
+                >
+                <ul
+                  id="e88190fb-f81a-443c-941f-ffe3eb7f21e6"
+                  class="bulleted-list"
+                >
+                  <li style="list-style-type: circle">
+                    Challenges have the potential to be a differentiated creator
+                    feature: eg. Roblox devs/influencers could post challenges
+                    for the community and also post short-form video content
+                    around those challenges
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul id="4b3f9180-87db-4ae2-92cb-4a4b61a41a0f" class="bulleted-list">
+              <li style="list-style-type: disc">
+                <strong
+                  >And the strategic question: what characteristics do we want
+                  Mushroom to have?</strong
+                >
+              </li>
+            </ul>
+            <table
+              id="f6f839b7-6743-45ac-ba9e-c91c861b651c"
+              class="simple-table"
+            >
+              <tbody>
+                <tr id="ee11b6b6-eaa1-4b20-aa78-3fd0d7cdd7be">
+                  <td id="u~e&gt;" class=""><strong>Connection</strong></td>
+                  <td id="GHZa" class=""><strong>Community</strong></td>
+                  <td id="soz|" class=""><strong>Creators</strong></td>
+                  <td id="BHs=" class=""><strong>Core Loop</strong></td>
+                </tr>
+                <tr id="57e977f2-c905-4d39-b02c-28dd9b2f8b72">
+                  <td id="u~e&gt;" class="">Local</td>
+                  <td id="GHZa" class="">Explicit</td>
+                  <td id="soz|" class="">Long-tail</td>
+                  <td id="BHs=" class="">Creation</td>
+                </tr>
+                <tr id="e9ae2c46-7eba-41f3-bcef-a92ae322addb">
+                  <td id="u~e&gt;" class="">Global</td>
+                  <td id="GHZa" class="">Implicit</td>
+                  <td id="soz|" class="">Short-tail</td>
+                  <td id="BHs=" class="">Consumption</td>
+                </tr>
+              </tbody>
+            </table>
+            <p id="dcd354a8-e4d9-4f94-b26c-66423a5a6e32" class=""></p>
+          </div>
+        </details>
+      </div>
+    </article>
+  </body>
+</html>
